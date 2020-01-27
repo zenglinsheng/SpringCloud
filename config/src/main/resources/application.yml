@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zenglinsheng/config-repo
+          username: zenglinsheng
+          password: 681181323
+          basedir: D://IDEA-project//spring-cloud//basedir
+  rabbitmq:
+    host: 192.168.229.129
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 20
+        prefetch: 50
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8082
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

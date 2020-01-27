@@ -1,10 +1,30 @@
 package com.imooc.order.service.impl;
 
+import com.imooc.order.dataobject.OrderDetail;
+import com.imooc.order.dataobject.OrderMaster;
+import com.imooc.order.dto.OrderDTO;
+import com.imooc.order.enums.OrderStatusEnum;
+import com.imooc.order.enums.PayStatusEnum;
+import com.imooc.order.enums.ResultEnum;
+import com.imooc.order.exception.OrderException;
 import com.imooc.order.repository.OrderDetailRepository;
 import com.imooc.order.repository.OrderMasterRepository;
 import com.imooc.order.service.OrderService;
+import com.imooc.order.utils.KeyUtil;
+import com.imooc.product.client.ProductClient;
+import com.imooc.product.common.DecreaseStockInput;
+import com.imooc.product.common.ProductInfoOutput;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by 廖师兄
@@ -19,10 +39,10 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
-    /*@Autowired
+    @Autowired
     private ProductClient productClient;
-*/
-    /*@Override
+
+    @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
         String orderId = KeyUtil.genUniqueKey();
@@ -68,7 +88,7 @@ public class OrderServiceImpl implements OrderService {
         return orderDTO;
     }
 
-    @Override
+    /*@Override
     @Transactional
     public OrderDTO finish(String orderId) {
         //1. 先查询订单
@@ -98,7 +118,6 @@ public class OrderServiceImpl implements OrderService {
         orderDTO.setOrderDetailList(orderDetailList);
 
         return orderDTO;
-    }
-*/
+    }*/
 
 }

@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-//import org.springframework.cloud.netflix.feign.FeignClient;
-
 
 /**
  * Created by 廖师兄
