@@ -8,7 +8,7 @@ spring:
           uri: https://github.com/zenglinsheng/config-repo
           username: zenglinsheng
           password: 681181323
-          basedir: D://IDEA-project//spring-cloud//basedir
+          basedir: E://basedir
   rabbitmq:
     host: 192.168.229.129
     port: 5672
