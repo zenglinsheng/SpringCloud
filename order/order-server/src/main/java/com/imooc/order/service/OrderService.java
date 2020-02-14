@@ -10,6 +10,7 @@ public interface OrderService {
 
     /**
      * 创建订单
+     *
      * @param orderDTO
      * @return
      */
@@ -20,5 +21,6 @@ public interface OrderService {
      * @param orderId
      * @return
      */
-    //OrderDTO finish(String orderId);
+    OrderDTO finish(String orderId);
+
 }

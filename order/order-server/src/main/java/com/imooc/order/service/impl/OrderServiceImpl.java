@@ -23,6 +23,7 @@ import org.springframework.util.CollectionUtils;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -87,7 +88,7 @@ public class OrderServiceImpl implements OrderService {
         return orderDTO;
     }
 
-    /*@Override
+    @Override
     @Transactional
     public OrderDTO finish(String orderId) {
         //1. 先查询订单
@@ -106,7 +107,7 @@ public class OrderServiceImpl implements OrderService {
         orderMaster.setOrderStatus(OrderStatusEnum.FINISHED.getCode());
         orderMasterRepository.save(orderMaster);
 
-        //查询订单详情
+        //4. 查询订单详情
         List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderId);
         if (CollectionUtils.isEmpty(orderDetailList)) {
             throw new OrderException(ResultEnum.ORDER_DETAIL_NOT_EXIST);
@@ -117,6 +118,6 @@ public class OrderServiceImpl implements OrderService {
         orderDTO.setOrderDetailList(orderDetailList);
 
         return orderDTO;
-    }*/
+    }
 
 }

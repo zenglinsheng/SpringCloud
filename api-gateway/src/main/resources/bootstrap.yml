@@ -13,5 +13,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+#zuul的第一次访问都是懒加载的，所以第一次访问往往会出现超时
+#由于zuul依赖了hystrix,所以只需在这里配置超时设置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 5000
 
 

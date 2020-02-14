@@ -12,7 +12,29 @@ spring:
         myMessage:
           group: order
           content-type: application/json
+  zipkin:
+    base-url: http://zipkin:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 1000
+    getProductInfoList:
+      execution:
+        isolaton:
+          thread:
+            timeoutInMillisecond: 3000
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
