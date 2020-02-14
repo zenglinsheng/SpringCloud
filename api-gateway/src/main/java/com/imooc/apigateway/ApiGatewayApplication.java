@@ -12,4 +12,11 @@ public class ApiGatewayApplication {
         SpringApplication.run(ApiGatewayApplication.class, args);
     }
 
+      //动态刷新config的配置文件
+//    @ConfigurationProperties("zuul")
+//    @RefreshScope
+//    public ZuulProperties zuulProperties() {
+//        return new ZuulProperties();
+//    }
+
 }

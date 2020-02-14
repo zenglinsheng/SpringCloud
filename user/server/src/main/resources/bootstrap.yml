@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway
+    name: user
   cloud:
     config:
       discovery:
